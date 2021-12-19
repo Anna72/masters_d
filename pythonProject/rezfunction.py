@@ -44,17 +44,14 @@ def upd_x(n):
 
 def get_rez_func_params(test_time, maint_coef, maint_time, n, x):
     def rez_func(y):
-        # exmpl y = [0.8,0.8,0.8,0.8,0.8]
         # n = len(y)
         upd_x(n)
         y_local = copy.deepcopy(y)
         for i in range(n):
             y_local[i] /= 100
-        # test_time = 5000
-        # maint_coef = 10
-        # maint_time = 10
         rez = 0  # counter for useful working time of each obj
-        # rezminus = 0  # counter for maintenance cost for each obj
+        # rezminus = 0
+        # counter for maintenance cost for each obj
         counter = np.random.random_integers(1, 70, n)  # step in time table showing
         isworking = [1] * n
         # isworking[i] = 1 means object is working , isworking[i] = 0 means obj is stopped for reapair ,2 - waiting
