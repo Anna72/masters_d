@@ -2,13 +2,15 @@
 import pandas as pd
 import numpy as np
 import random
+import sys
+import copy
 from geneticalgorithm import geneticalgorithm as ga
+
 import showgraphs
 import rezfunction
 
-
 # n - number of objects in production line
-# для каждого обьекта хранятся данные показаттелей его сенсоро
+# для каждого обьекта хранятся данные показателей его сенсоро
 # print("enter n ")
 # n = int(input())#number of objects in line
 # print("enter estimated working time from, to")
@@ -41,8 +43,7 @@ for i in range(n):
 #   print("result " , func(y))
 func = rezfunction.get_rez_func_params(1000,10,10,n,x)
 
-import sys
-import copy
+
 for i in range(30):
   l = (i*3 + 1)
   y = 10*[l]
